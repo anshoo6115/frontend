@@ -38,5 +38,5 @@ jobs:
           name: Bucket Sync
           command: |
               ls -lrt ~/project/
-              aws s3 --profile eb-cli sync frontend/ s3://calebtest2/
+              aws s3 --profile eb-cli sync ~/project/ s3://calebtest2/
               aws cloudfront create-invalidation --distribution-id E36ZTPNQEF06F1 --paths /\* --profile eb-cli
