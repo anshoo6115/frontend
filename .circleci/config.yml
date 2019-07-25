@@ -28,7 +28,7 @@ jobs:
       - run:
           name: Backup to S3
           command: |
-              aws s3 cp --profile eb-cli --recursive s3://calebtest2/ s3://backupanshoo/`date +%d-%m-%Y-%H-%M`/ --exclude node_modules
+              aws s3 cp --profile eb-cli --recursive s3://calebtest2/ s3://backupanshoo/`date +%d-%m-%Y-%H-%M`/ --exclude 'node_modules/*'
       - run:
           name: Bucket Sync
           command: |
