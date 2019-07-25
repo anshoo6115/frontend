@@ -1,0 +1,39 @@
+##Circle CI version 2 configuration birchbox Domain.
+version: 2
+jobs:
+  build:
+    #Working directory of the project
+    working_directory: ~/project
+    docker:
+    - image: circleci/node:8.0.0
+    steps:
+    #Checkout the current branch
+      - checkout
+      - run:
+          name: Install required packages.
+          command: |
+              sudo apt-get install -y python-pip libyaml-dev python-dev
+              sudo pip install awscli
+              sudo npm cache clear --force
+              sudo rm -rf node_modules
+              sudo npm install
+              sudo npm install webpack
+              sudo npm install tapable --save-dev
+              #Print current branch.
+              echo ${CIRCLE_BRANCH}
+      - run:
+          name: Backup to S3
+          command: |
+              aws s3 cp --recursive s3://amptest.birchbox.com/ s3://perf-backup/amptest.birchbox.com/`date +%d-%m-%Y-%H-%M`/
+      - run:
+          name: Create npm build
+          command: |
+              ls -lrt ~/project
+              npm run build
+              ls -lrt ~/project
+      - run:
+          name: Bucket Sync
+          command: |
+              ls -lrt ~/project/
+              aws s3 sync dist/ s3://amptest.birchbox.com/
+              aws cloudfront create-invalidation --distribution-id E3RY13PUR2ZPO7 --paths /\*

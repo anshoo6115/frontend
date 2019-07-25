@@ -1,0 +1,22 @@
+{
+  "main.css": "/static/css/main.f8be142c.chunk.css",
+  "main.js": "/static/js/main.e72d15c4.chunk.js",
+  "main.js.map": "/static/js/main.e72d15c4.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+  "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+  "static/css/2.077714d0.chunk.css": "/static/css/2.077714d0.chunk.css",
+  "static/js/2.deb31a4d.chunk.js": "/static/js/2.deb31a4d.chunk.js",
+  "static/js/2.deb31a4d.chunk.js.map": "/static/js/2.deb31a4d.chunk.js.map",
+  "index.html": "/index.html",
+  "precache-manifest.dabe3d20ba21d7f981e39d51954edfeb.js": "/precache-manifest.dabe3d20ba21d7f981e39d51954edfeb.js",
+  "service-worker.js": "/service-worker.js",
+  "static/css/2.077714d0.chunk.css.map": "/static/css/2.077714d0.chunk.css.map",
+  "static/css/main.f8be142c.chunk.css.map": "/static/css/main.f8be142c.chunk.css.map",
+  "static/media/Video.svg": "/static/media/Video.3f5d3d23.svg",
+  "static/media/index.scss": "/static/media/radio_check.56abdd8d.svg",
+  "static/media/defaultAvatar.svg": "/static/media/defaultAvatar.5fa718c4.svg",
+  "static/media/error_msg.svg": "/static/media/error_msg.fa9ab0c6.svg",
+  "static/media/AuthHero.scss": "/static/media/heroLogin.3a62914b.jpg",
+  "static/media/image.svg": "/static/media/image.b6250c25.svg",
+  "static/media/react-widgets.css": "/static/media/rw-widgets.eceddf47.ttf"
+}
