@@ -35,12 +35,6 @@ jobs:
           command: |
               aws s3 cp --profile eb-cli --recursive s3://calebtest2/ s3://backupanshoo/`date +%d-%m-%Y-%H-%M`/
       - run:
-          name: Create npm build
-          command: |
-              ls -lrt ~/project
-              npm run build
-              ls -lrt ~/project
-      - run:
           name: Bucket Sync
           command: |
               ls -lrt ~/project/
