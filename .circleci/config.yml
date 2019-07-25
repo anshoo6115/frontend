@@ -22,6 +22,15 @@ jobs:
               #Print current branch.
               echo ${CIRCLE_BRANCH}
       - run:
+          name: Create AWS credentials manually
+          command: |
+                mkdir ~/.aws
+                touch ~/.aws/config
+                chmod 600 ~/.aws/config
+                echo "[profile eb-cli]" > ~/.aws/config
+                echo "aws_access_key_id=$AWS_ACCESS_KEY_ID" >> ~/.aws/config
+                echo "aws_secret_access_key=$AWS_SECRET_ACCESS_KEY" >> ~/.aws/config        
+      - run:
           name: Backup to S3
           command: |
               aws s3 cp --profile eb-cli --recursive s3://calebtest2/ s3://backupanshoo/`date +%d-%m-%Y-%H-%M`/
