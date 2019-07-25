@@ -24,7 +24,7 @@ jobs:
       - run:
           name: Backup to S3
           command: |
-              aws s3 cp --profile eb-cli --recursive s3://calebtest2/ s3://calebtest.com/`date +%d-%m-%Y-%H-%M`/
+              aws s3 cp --profile eb-cli --recursive s3://calebtest2/ s3://backupanshoo/`date +%d-%m-%Y-%H-%M`/
       - run:
           name: Create npm build
           command: |
