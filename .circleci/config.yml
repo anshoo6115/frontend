@@ -24,7 +24,7 @@ jobs:
       - run:
           name: Backup to S3
           command: |
-              aws s3 cp --recursive s3://calebtest2/ s3://calebtest.com/`date +%d-%m-%Y-%H-%M`/
+              aws s3 cp --profile eb-cli --recursive s3://calebtest2/ s3://calebtest.com/`date +%d-%m-%Y-%H-%M`/
       - run:
           name: Create npm build
           command: |
@@ -35,5 +35,5 @@ jobs:
           name: Bucket Sync
           command: |
               ls -lrt ~/project/
-              aws s3 sync dist/ s3://calebtest2/
-              aws cloudfront create-invalidation --distribution-id E36ZTPNQEF06F1 --paths /\*
+              aws s3 --profile eb-cli sync dist/ s3://calebtest2/
+              aws cloudfront create-invalidation --distribution-id E36ZTPNQEF06F1 --paths /\* --profile eb-cli
